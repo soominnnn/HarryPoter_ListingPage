@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+      <div class="inline">
+        <img src="./image/Dumble.png" alt="">
+        <h1>Choose your Hogwarts House!</h1>
+      </div>
+      <div class="hogwartsHouseContainer">
+        <div class="circle griffindor"><a href="./Griffindor.html"></a></div>
+        <div class="circle slytherin"></div>
+        <div class="circle ravenclaw"></div>
+        <div class="circle hufflepoof"></div>
+      </div>
+  </div>
+</body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    width:100vw;
+    height: 100vh; 
+    background-image: url('./image/HogwartsBackground.jpg');
+    background-position: center;
+    background-size: auto 100%;
+  }
+  .container {
+  }
+  .inline {
+    display: inline-block;
+  }
+  img {
+    float: left;
+    width: 230px;
+    height: 330px;
+  }
+  h1{
+    width: auto;
+    height: 80px;
+    font-size: 48px;
+    font-family: 'Nanum Myeongjo', serif;
+    color:white;
+  }
+  .hogwartsHouseContainer {
+    margin-left: 70px;
+    margin-top: 160px;
+  }
+  .circle {
+    display: inline-block;
+    margin-left: 100px;
+    width: 260px;
+    height: 260px;
+    border-radius: 280px;
+  }
+  
+  .griffindor {
+    background-image: url('./image/GriffindorLogo.gif');
+    background-position: -75px -71px;
+  }
+
+  .slytherin {
+    background-image: url('./image/slytherin_logo.gif');
+    background-size: 400px 480px;
+    background-position: -72px -68px;
+  }
+
+  .ravenclaw {
+    background-image: url('./image/RavenClaw_logo.gif');
+    background-position: -72px -68px;
+  }
+
+  .hufflepoof {
+    background-image: url('./image/HufflepoofLogo.gif');
+    background-size: 400px 480px;
+    background-position: -72px -68px;
+  }
+
+</style>

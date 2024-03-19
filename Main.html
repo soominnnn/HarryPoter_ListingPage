@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <img src="./image/HogwartsLogo.png" alt="HogwartsLogo" class="logo">
+    <div class="gifContainer">
+      <img src="./image/Macgonagal Frame.png" alt="" class="frame">
+      <img src="./image/macgo.gif" alt="" class="macgonagal">
+    </div>
+    <p class="nanummyeongjo">Mr. Harry Potter<br>
+      The Cupboard Under the Stairs<br>
+      4 Privet Drive,<br>
+      Little Whinging<br>
+      SURREY.<br>
+      <br>
+      Dear Mr. Potter,<br>
+      <br>
+      We are pleased to inform you that you have been accepted at<br>
+      Hogwarts School of Witchcraft and Wizardry.<br>
+      <br>
+      Please find enclosed a list of all necessary books and equipment.<br>
+      <br>
+      Term begins on September 1. We await wyour owl by no later than July 31.
+      <br>
+      Yours sincerely,</p>
+      <img src="./image/Macgonagal Signature.png" alt="">
+      <p>Minerva McGonagall<br>
+        Deputy Headmistress</p>
+  </div>
+</body>
+
+<style>
+  @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+.nanummyeongjo * {
+ font-family: 'Nanum Myeongjo', serif;
+ font-weight: bold;
+}
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./image/Background.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.container .logo {
+  width: 138px;
+  height: 161px;
+}
+p {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #38040E;
+}
+.gifContainer {
+  position:relative;
+  width: 210px;
+  height: 290px;
+}
+.macgonagal {
+  display: inline-block;
+  width: 128px;
+  height: 192px;
+  display: block;
+}
+.frame {
+  position: relative;
+  top: -50px;
+  left: 20px;
+  display: inline-block;
+  width: 210px;
+  height: 290px;
+}
+</style>
+</html>
