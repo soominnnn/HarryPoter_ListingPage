@@ -7,30 +7,38 @@
 </head>
 <body>
   <div class="container">
-    <img src="./image/HogwartsLogo.png" alt="HogwartsLogo" class="logo">
-    <div class="gifContainer">
-      <img src="./image/Macgonagal Frame.png" alt="" class="frame">
-      <img src="./image/macgo.gif" alt="" class="macgonagal">
+    <div class="logoContainer">
+      <img src="./image/HogwartsLogo.png" alt="HogwartsLogo" class="logo">
     </div>
-    <p class="nanummyeongjo">Mr. Harry Potter<br>
-      The Cupboard Under the Stairs<br>
-      4 Privet Drive,<br>
-      Little Whinging<br>
-      SURREY.<br>
-      <br>
-      Dear Mr. Potter,<br>
-      <br>
-      We are pleased to inform you that you have been accepted at<br>
-      Hogwarts School of Witchcraft and Wizardry.<br>
-      <br>
-      Please find enclosed a list of all necessary books and equipment.<br>
-      <br>
-      Term begins on September 1. We await wyour owl by no later than July 31.
-      <br>
-      Yours sincerely,</p>
-      <img src="./image/Macgonagal Signature.png" alt="">
-      <p>Minerva McGonagall<br>
-        Deputy Headmistress</p>
+    <main>
+      <div class="wrapper">
+        <div class="gif">
+          <img src="./image/Macgonagal Frame.png" alt="frame" class="frame">
+          <img src="./image/macgo.gif" alt="macgonagal" class="macgonagalGif">
+        </div>
+        <p>Mr. Harry Potter<br>
+          The Cupboard Under the Stairs<br>
+          4 Privet Drive,<br>
+          Little Whinging<br>
+          SURREY.<br>
+          <br>
+          Dear Mr. Potter,<br>
+          <br>
+          We are pleased to inform you that<br>
+          you have been accepted at<br>
+          Hogwarts School of Witchcraft and Wizardry.<br>
+          <br>
+          Please find enclosed a list of all necessary books and equipment.<br>
+          <br>
+          Term begins on September 1. We await your owl by no later than July 31.
+          <br>
+          Yours sincerely,</p>
+          <img src="./image/Macgonagal Signature.png" alt="" style="width: 350px; height: 72px">
+          <p>Minerva McGonagall<br>
+            Deputy Headmistress</p>
+          <button class="nextButton" onclick="location.href = './Choose.html'">Next</button>
+      </div>
+    </main>
   </div>
 </body>
 
@@ -42,47 +50,82 @@
  font-weight: bold;
 }
 
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-.container {
-  width: 100vw;
-  height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-image: url('./image/Background.jpg');
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  height: 130px;
 }
 
 .container .logo {
   width: 138px;
-  height: 161px;
+  height: 140px;
 }
-p {
-  font-family: 'Nanum Myeongjo', serif;
-  font-size: 28px;
-  font-weight: bold;
-  color: #38040E;
+
+main {
+  display: flex;
+  justify-content: center;
 }
-.gifContainer {
-  position:relative;
-  width: 210px;
-  height: 290px;
+
+.gif {
+  width:211px;
+  height: 298px;
+  float: right;
 }
-.macgonagal {
-  display: inline-block;
-  width: 128px;
-  height: 192px;
-  display: block;
-}
+
 .frame {
-  position: relative;
-  top: -50px;
-  left: 20px;
-  display: inline-block;
-  width: 210px;
-  height: 290px;
+  width: 173px;
+  height: 269px;
 }
+
+.macgonagalGif {
+  width: 110px;
+  height: 176px;
+  position: relative;
+  left: 33px;
+  top: -211px;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+p {
+  color: #38040E;
+  font-size: 28px;
+  font-family: Nanum Myeongjo, Serif;
+  font-weight: bold;
+  text-shadow: 0px 2px 2px gray;
+  margin: 0;
+}
+
+.nextButton {
+  width: 168px;
+  height: 41px;
+  float: right;
+  background-color: transparent;
+  border: none;
+  color: #38040E;
+  font-size: 28px;
+  font-family: Nanum Myeongjo, Serif;
+  font-weight: bold;
+  text-shadow: 0px 2px 2px gray;
+}
+
+
 </style>
 </html>

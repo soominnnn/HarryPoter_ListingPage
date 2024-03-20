@@ -6,6 +6,72 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <div class="background"></div>
+  <div class="backgroundShadow"></div>
+  <div class="container">
+    <header>
+      <div class="searchBar"></div>
+      <img src="./image/GriffindorFont.png" class="logo">
+      <button class="createButton">add New Student</button>
+    </header>
+  </div>
 </body>
 </html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .background {
+    background-image: url('./image/GriffindorBackground.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+
+  .backgroundShadow {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity:0.5;
+    z-index: -1;
+  }
+
+  header {
+    margin: 0 auto;
+    align-items: top;
+    display: flex;
+    height: 145px;
+    justify-content: center;
+  }
+  .searchBar {
+    width: 345px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+  }
+  .logo {
+    width: 440px;
+    height: 140px;
+  }
+  .createButton {
+    width: 325px;
+    font-size: 32px;
+    color: #F9E2A5;
+    background-color: transparent;
+    border-bottom: 2px solid #F9E2A5;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+</style>
