@@ -6,9 +6,10 @@
   <title>Document</title>
 </head>
 <body>
+  <img src="./image/HogwartsBackground.jpg" class="imgg">
   <div class="container">
       <div class="inline">
-        <img src="./image/Dumble.png" alt="">
+        <img src="./image/Dumble.png" class="img"alt="">
         <h1>Choose your Hogwarts House!</h1>
       </div>
       <div class="hogwartsHouseContainer">
@@ -45,7 +46,14 @@
     align-items: center;
     justify-content: center;
   }
-  img {
+  .imgg{
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .img {
     float: left;
     width: 205px;
     height: 296px;
