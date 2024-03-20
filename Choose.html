@@ -12,7 +12,7 @@
         <h1>Choose your Hogwarts House!</h1>
       </div>
       <div class="hogwartsHouseContainer">
-        <div class="circle griffindor"><a href="./Griffindor.html"></a></div>
+        <div class="circle griffindor" onclick="location.href='./Griffindor.html'"></div>
         <div class="circle slytherin"></div>
         <div class="circle ravenclaw"></div>
         <div class="circle hufflepoof"></div>
@@ -36,23 +36,25 @@
 
   .container {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: auto;
   }
 
   .inline {
+    height: 470px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 470px;
   }
   img {
     float: left;
-    width: 230px;
-    height: 330px;
+    width: 205px;
+    height: 296px;
   }
   h1{
     width: auto;
-    height: 80px;
+    position: relative;
+    top: 14px;
+    left: 30px;
     font-size: 48px;
     font-family: 'Nanum Myeongjo', serif;
     color:white;
