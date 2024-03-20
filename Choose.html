@@ -26,16 +26,24 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
-    width:100vw;
-    height: 100vh; 
     background-image: url('./image/HogwartsBackground.jpg');
     background-position: center;
-    background-size: auto 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width:100vw;
   }
+
   .container {
+    max-width: 1440px;
+    margin: 0 auto;
   }
+
   .inline {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 470px;
   }
   img {
     float: left;
@@ -50,12 +58,13 @@
     color:white;
   }
   .hogwartsHouseContainer {
-    margin-left: 70px;
-    margin-top: 160px;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .circle {
     display: inline-block;
-    margin-left: 100px;
     width: 260px;
     height: 260px;
     border-radius: 280px;
@@ -81,6 +90,12 @@
     background-image: url('./image/HufflepoofLogo.gif');
     background-size: 400px 480px;
     background-position: -72px -68px;
+  }
+
+  @media screen and (max-width: 1039.09px) {
+    body {
+      height: auto;
+    }
   }
 
 </style>
