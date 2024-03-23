@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="./Griffindor.js"></script>
   <title>Document</title>
 </head>
 <body>
+  <div class="addStudentModal"></div>
+  <div class="studentCard">
+    <input type="file" class="uploadInput">
+  </div>
   <img src="./image/GriffindorBackground.gif" class="background">
   <div class="backgroundShadow"></div>
   <div class="container">
@@ -17,57 +22,16 @@
   
   <main>
     <div class="profileContainer">
-      <div class="profileImg" style="background-image: url('./image/LunaLovegood.jpg');">
-        <img src="./image/profileFrame.png" class="profileFrame">
+      <div class="profile">
+        <img class="profileFrame">
         <p class="name">Luna LoveGood</p>
-        <img src="./image/NameUnderBar.png" class="underBarImg">
-      </div>
-    </div>
-    <div class="profileContainer">
-      <div class="profileImg">
-        <img src="./image/profileFrame.png" class="profileFrame">
-        <p class="name">Harry Potter</p>
-        <img src="./image/NameUnderBar.png" class="underBarImg">
-      </div>
-    </div>
-    <div class="profileContainer">
-      <div class="profileImg">
-        <img src="./image/profileFrame.png" class="profileFrame">
-        <p class="name">Harry Potter</p>
-        <img src="./image/NameUnderBar.png" class="underBarImg">
-      </div>
-    </div>
-    <div class="profileContainer">
-      <div class="profileImg">
-        <img src="./image/profileFrame.png" class="profileFrame">
-        <p class="name">Luna LoveGood</p>
-        <img src="./image/NameUnderBar.png" class="underBarImg">
-      </div>
-    </div>
-    <div class="profileContainer">
-      <div class="profileImg">
-        <img src="./image/profileFrame.png" class="profileFrame">
-        <p class="name">Luna LoveGood</p>
-        <img src="./image/NameUnderBar.png" class="underBarImg">
-      </div>
-    </div>
-    <div class="profileContainer">
-      <div class="profileImg">
-        <img src="./image/profileFrame.png" class="profileFrame">
-        <p class="name">Luna LoveGood</p>
-        <img src="./image/NameUnderBar.png" class="underBarImg">
-      </div>
-    </div>
-    <div class="profileContainer">
-      <div class="profileImg">
-        <img src="./image/profileFrame.png" class="profileFrame">
-        <p class="name">Luna LoveGood</p>
-        <img src="./image/NameUnderBar.png" class="underBarImg">
+        <img class="underBarImg">
       </div>
     </div>
   </main>
   </div>
 </body>
+<script type="module" src="./src/core/firebase.js"></script>
 </html>
 
 <style>
@@ -78,15 +42,38 @@
     width: 100%;
     height: 100%;
   }
+  .uploadInput {
+    width: 230px;
+    height: 350px;
+
+  }
+  .studentCard {
+    position: absolute;
+    background-image: url('./image/StudentCard.png');
+    width: 100%;
+    height: 100%;
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 6;
+  }
+  .addStudentModal {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8
+  }
   .profileContainer {
     position: relative; 
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 218px; 
-    height: 439px; 
+    height: 450px; 
   }
-  .profileImg {
+  .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,7 +82,12 @@
     justify-content:flex-start;
   }
   .profileFrame {
-    z-index:4; width: 218px; height: 334px; position:relative; z-index: 4;
+    z-index:4; 
+    width: 218px; 
+    height: 334px; 
+    position:relative; 
+    z-index: 4;
+    content: url('./image/profileFrame.png');
   }
   .name {
     position: relative;
@@ -111,7 +103,7 @@
     position: relative;
     /* top: 305px;
       left: -39px; */
-      position: relative;
+    content: url('./image/NameUnderBar.png');
     width: 205px;
     height: 55px;
     z-index: 3;
@@ -175,7 +167,7 @@
 
   main {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 1220px;
     flex-wrap: wrap;
     gap: 30px;
@@ -190,6 +182,9 @@
     color: white;
     font-weight: 500;
     text-shadow: 0px 2px 5px white;
-    font-size: 32px;
+    font-size: 2rem;
+  }
+  img {
+    background-color: transparent;
   }
 </style>
