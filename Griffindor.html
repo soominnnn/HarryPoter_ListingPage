@@ -6,33 +6,135 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="background"></div>
+  <img src="./image/GriffindorBackground.gif" class="background">
   <div class="backgroundShadow"></div>
   <div class="container">
-    <header>
+    <!--<header>
       <div class="searchBar"></div>
-      <img src="./image/GriffindorFont.png" class="logo">
+      <img src="./image/GriffindorFont.png" alt="">
       <button class="createButton">add New Student</button>
-    </header>
+    </header>-->
+  
+  <main>
+    <div class="profileContainer">
+      <div class="profileImg" style="background-image: url('./image/LunaLovegood.jpg');">
+        <img src="./image/profileFrame.png" class="profileFrame">
+        <p class="name">Luna LoveGood</p>
+        <img src="./image/NameUnderBar.png" class="underBarImg">
+      </div>
+    </div>
+    <div class="profileContainer">
+      <div class="profileImg">
+        <img src="./image/profileFrame.png" class="profileFrame">
+        <p class="name">Harry Potter</p>
+        <img src="./image/NameUnderBar.png" class="underBarImg">
+      </div>
+    </div>
+    <div class="profileContainer">
+      <div class="profileImg">
+        <img src="./image/profileFrame.png" class="profileFrame">
+        <p class="name">Harry Potter</p>
+        <img src="./image/NameUnderBar.png" class="underBarImg">
+      </div>
+    </div>
+    <div class="profileContainer">
+      <div class="profileImg">
+        <img src="./image/profileFrame.png" class="profileFrame">
+        <p class="name">Luna LoveGood</p>
+        <img src="./image/NameUnderBar.png" class="underBarImg">
+      </div>
+    </div>
+    <div class="profileContainer">
+      <div class="profileImg">
+        <img src="./image/profileFrame.png" class="profileFrame">
+        <p class="name">Luna LoveGood</p>
+        <img src="./image/NameUnderBar.png" class="underBarImg">
+      </div>
+    </div>
+    <div class="profileContainer">
+      <div class="profileImg">
+        <img src="./image/profileFrame.png" class="profileFrame">
+        <p class="name">Luna LoveGood</p>
+        <img src="./image/NameUnderBar.png" class="underBarImg">
+      </div>
+    </div>
+    <div class="profileContainer">
+      <div class="profileImg">
+        <img src="./image/profileFrame.png" class="profileFrame">
+        <p class="name">Luna LoveGood</p>
+        <img src="./image/NameUnderBar.png" class="underBarImg">
+      </div>
+    </div>
+  </main>
   </div>
 </body>
 </html>
 
 <style>
+  .container {
+    justify-content: center;
+    overflow-y: auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .profileContainer {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 218px; 
+    height: 439px; 
+  }
+  .profileImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./image/HarryPotter.jpg'); background-size: cover; background-repeat: no-repeat;
+    width: 218px; height: 334px; border-radius: 28px;  z-index: 3;
+    justify-content:flex-start;
+  }
+  .profileFrame {
+    z-index:4; width: 218px; height: 334px; position:relative; z-index: 4;
+  }
+  .name {
+    position: relative;
+      /* top: 327px;
+      left: 68px; */
+    width: 218px;
+    margin-top: 10px;
+    z-index: 3;
+    padding: 0;
+    text-align: center;
+  }
+  .underBarImg {
+    position: relative;
+    /* top: 305px;
+      left: -39px; */
+      position: relative;
+    width: 205px;
+    height: 55px;
+    z-index: 3;
+  }
+
+.nanummyeongjo * {
+ font-family: 'Nanum Myeongjo', serif;
+ font-weight: bold;
+}
+
   body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
   }
 
   .background {
-    background-image: url('./image/GriffindorBackground.gif');
-    background-position: center;
+    position: fixed;
     background-repeat: no-repeat;
+    background-position: 100px 200px;
     background-size: cover;
-    position:absolute;
-    object-fit: cover;
     width: 100%;
     height: 100%;
     z-index: -2;
@@ -43,7 +145,7 @@
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity:0.5;
+    opacity:0.7;
     z-index: -1;
   }
 
@@ -60,10 +162,6 @@
     border-radius: 25px;
     background-color: white;
   }
-  .logo {
-    width: 440px;
-    height: 140px;
-  }
   .createButton {
     width: 325px;
     font-size: 32px;
@@ -73,5 +171,25 @@
     border-top: none;
     border-left: none;
     border-right: none;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+    width: 1220px;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0 auto;
+
+  }
+  p{
+    font-family: 'Nanum Myeongjo',serif;
+    width: 215px;
+    margin: 0;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0px 2px 5px white;
+    font-size: 32px;
   }
 </style>
