@@ -1,5 +1,5 @@
 import { createDiv } from "../studentProfile.js";
-import {db, doc, collection, storage, ref, getDownloadURL, uploadBytes} from '../../../core/firebase.js';
+import {db, doc, setDoc, collection, storage, ref, getDownloadURL, uploadBytes} from '../../../core/firebase.js';
 
 let imageURL = '';
 const dbRef = "Hufflepoof";
