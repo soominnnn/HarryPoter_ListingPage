@@ -1,8 +1,11 @@
-import {db, doc, collection, storage, setDoc, ref, getDownloadURL, uploadBytes} from '../../core/firebase.js';
+import { createDiv } from "../studentProfile.js";
+import {db, doc, collection, storage, ref, getDownloadURL, uploadBytes} from '../../../core/firebase.js';
 
 let imageURL = '';
+const dbRef = "Ravenclaw";
 
-function uploadFile(file, dbRef) {
+document.querySelector('#file').addEventListener('change', function(){
+  let file = this.files[0];
   const reader = new FileReader();
 
   reader.onload = (event) => {
@@ -18,7 +21,9 @@ function uploadFile(file, dbRef) {
       imageURL = downloadURL;
     });
   });
-}
+})
+
+const addStudentButton = document.querySelector('.addStudentButton');
 
 async function createStudent(dbRef) {
   const studentName = document.querySelector('.nameInput').value;
@@ -35,4 +40,7 @@ async function createStudent(dbRef) {
   }
 } 
 
-export {uploadFile, createStudent};
+addStudentButton.addEventListener('click', createStudent);
+
+
+createDiv(dbRef);

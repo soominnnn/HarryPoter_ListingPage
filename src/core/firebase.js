@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-import { getFirestore, doc, getDocs, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDocs, collection, deleteDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { getStorage, ref, getDownloadURL, uploadBytes } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js"
 
   const firebaseConfig = {
@@ -16,4 +16,4 @@ import { getStorage, ref, getDownloadURL, uploadBytes } from "https://www.gstati
   const storage = getStorage();
 
 
-export {db, doc, getDocs, collection, deleteDoc, storage, ref, getDownloadURL, uploadBytes};
+export {db, doc, getDocs, setDoc, collection, deleteDoc, storage, ref, getDownloadURL, uploadBytes};

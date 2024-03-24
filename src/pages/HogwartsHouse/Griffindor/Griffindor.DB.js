@@ -1,8 +1,11 @@
-import {db, doc, collection, storage, setDoc, ref, getDownloadURL, uploadBytes} from '../../core/firebase.js';
+import { createDiv } from "../studentProfile.js";
+import {db, doc, collection, storage, ref, getDownloadURL, uploadBytes} from '../../../core/firebase.js';
 
 let imageURL = '';
+const dbRef = "Griffindor";
 
-function uploadFile(file, dbRef) {
+document.querySelector('#file').addEventListener('change', function(){
+  let file = this.files[0];
   const reader = new FileReader();
 
   reader.onload = (event) => {
@@ -18,21 +21,25 @@ function uploadFile(file, dbRef) {
       imageURL = downloadURL;
     });
   });
-}
+})
 
-async function createStudent(dbRef) {
+const addStudentButton = document.querySelector('.addStudentButton');
+
+const createStudent = async () => {
   const studentName = document.querySelector('.nameInput').value;
 
-  if(studentName.length >= 13) {
-    alert("이름은 13자 이하로 작성해주세요.");
-  } else {
+  try {
     await setDoc(doc(collection(db, dbRef), studentName), {
       name: studentName, 
       imageURL: imageURL
     });
-  
-    location.reload();
+  } catch (e) {
+    console.log(e);
   }
-} 
+  location.reload();
+}
 
-export {uploadFile, createStudent};
+addStudentButton.addEventListener('click', createStudent);
+
+
+createDiv(dbRef);

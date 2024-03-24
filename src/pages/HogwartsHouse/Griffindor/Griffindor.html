@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="../modal.css">
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
-  <script defer src="./modal.js"></script>
+  <script defer src="../modal.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -21,7 +18,7 @@
           <div class="studentImage"></div>
           <label for="file">
             <div class="uploadInput">Click to Upload</div>
-            <input type="file" id="file" class="uploadInputArea" style="display: none;">
+            <input type="file" id="file" class="uploadInputArea" style="display: none;" /required>
           </label>        
         </div>
         <div class="studentInput">
@@ -29,14 +26,14 @@
             <p>name: </p>
             <input type="text" class="nameInput">
           </div>
-          <p>The name can be up to 13 characters, including spaces.</p>
+          <p>The name can be up to 13 characters, <br>including spaces.</p>
           <button class="addStudentButton" type="button">add Student</button>
         </div>
       </form>
     </div>
   </div>
   <!--modal end-->
-  <img src="../../../../image/GriffindorBackground.gif" class="background">
+  <img src="../../../../image/GriffindorLogo.gif" class="background">
   <div class="backgroundShadow"></div>
   <div class="container">
     <header>
@@ -46,7 +43,7 @@
   <main class="main"></main>
   </div>
 </body>
-<script type="module" src="../src/core/firebase.js"></script>
+<script type="module" src="../../../core/firebase.js"></script>
 <script type="module" src="../studentProfile.js"></script>
-<script type="module" src="../uploadData.js"></script>
+<script type="module" src="./Griffindor.DB.js"></script>
 </html>

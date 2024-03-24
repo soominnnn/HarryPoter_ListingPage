@@ -2,8 +2,8 @@ import {db, getDocs, collection, deleteDoc} from '../../core/firebase.js';
 
 const main = document.getElementsByClassName("main")[0];
 
-const createDiv = async () => {
-  const querySnapshot = await getDocs(collection(db, "Griffindor"));
+const createDiv = async (dbRef) => {
+  const querySnapshot = await getDocs(collection(db, dbRef));
 
   querySnapshot.forEach((student) => {
     const profileHTML = `
@@ -27,7 +27,7 @@ const createDiv = async () => {
     
     const profileId = profile.getAttribute('id');
   
-    await deleteDoc(doc(db, "Griffindor", profileId));
+    await deleteDoc(doc(db, dbRef, profileId));
     location.reload();
   };
   
@@ -39,8 +39,6 @@ const createDiv = async () => {
     }
   }
 };
-
-createDiv();
 
 const search = (e) => {
   const searchTarget = e.target.value;
@@ -56,3 +54,5 @@ const search = (e) => {
 }
 
 document.querySelector('.searchBar').addEventListener('change', search);
+
+export {createDiv};
