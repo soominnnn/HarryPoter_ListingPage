@@ -1,0 +1,175 @@
+// position, display, width/height, padding/margin, font, bg, etc
+.root{
+  backgroundIndex: -2
+  backgroundShadowIndex: -1
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.background {
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+
+  background-position: 100px 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  z-index: -2;
+}
+
+.backgroundShadow {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+
+  opacity: 0.7;
+
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.container header {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+header .logo {
+  width: 440px;
+  height: 110px;
+}
+
+header .createButton {
+  width: 200px;
+  height: 40px;
+
+  font-size: 1.5rem;
+  color: #F9E2A5;
+
+  background-color: transparent;
+
+  border: none;
+}
+
+header .searchBar {
+  width: 200px;
+  height: 38px;
+  margin-left: 40px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.container main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+
+  max-width: 1220px;
+
+  margin: 30px auto;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  width: 218px;
+  height: 455px;
+}
+
+.deleteButton {
+  position: absolute;
+  
+  margin: 0;
+
+  color: white;
+
+  text-align: center;
+  font-size: 2rem;
+
+  z-index: 4;
+
+  opacity: 0;
+}
+.profileContainer:hover .deleteButton {
+  opacity: 1;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+
+  width: 218px; 
+  height: 330px;
+
+  background-image: url('../../../image/HarryPotter.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+
+  border-radius: 28px;  
+  z-index: 3;
+}
+
+.profileFrame {
+  position:relative;
+
+  width: 218px; 
+  height: 334px; 
+
+  margin-top: -2px;
+
+  content: url('../../../image/profileFrame.png');
+  z-index: 4;
+}
+
+.name {
+  position: relative;
+
+  width: 215px;
+  
+  margin-top: 10px;
+  margin: 0;
+  padding: 10px;
+
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 500;
+  font-size: 2rem;
+
+  text-align: center;
+  text-shadow: 0px 2px 5px white;
+
+  color: white;
+}
+
+.underBarImg {
+  position: relative;
+  width: 205px;
+  height: 55px;
+  content: url('../../../image/NameUnderBar.png');
+  z-index: 3;
+}
