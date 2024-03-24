@@ -25,13 +25,13 @@ document.querySelector('#file').addEventListener('change', function(){
 
 const addStudentButton = document.querySelector('.addStudentButton');
 
-async function createStudent(dbRef) {
+async function createStudent() {
   const studentName = document.querySelector('.nameInput').value;
 
   if(studentName.length >= 13) {
     alert("이름은 13자 이하로 작성해주세요.");
   } else {
-    await setDoc(doc(collection(db, dbRef), studentName), {
+    await setDoc(doc(collection(db, "Hufflepoof"), studentName), {
       name: studentName, 
       imageURL: imageURL
     });

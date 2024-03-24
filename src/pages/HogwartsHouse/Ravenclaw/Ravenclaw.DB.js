@@ -1,5 +1,5 @@
 import { createDiv } from "../studentProfile.js";
-import {db, doc, collection, storage, ref, getDownloadURL, uploadBytes} from '../../../core/firebase.js';
+import {db, doc, setDoc, collection, storage, ref, getDownloadURL, uploadBytes} from '../../../core/firebase.js';
 
 let imageURL = '';
 const dbRef = "Ravenclaw";
@@ -25,13 +25,13 @@ document.querySelector('#file').addEventListener('change', function(){
 
 const addStudentButton = document.querySelector('.addStudentButton');
 
-async function createStudent(dbRef) {
+async function createStudent() {
   const studentName = document.querySelector('.nameInput').value;
 
   if(studentName.length >= 13) {
     alert("이름은 13자 이하로 작성해주세요.");
   } else {
-    await setDoc(doc(collection(db, dbRef), studentName), {
+    await setDoc(doc(collection(db, "Ravenclaw"), studentName), {
       name: studentName, 
       imageURL: imageURL
     });
