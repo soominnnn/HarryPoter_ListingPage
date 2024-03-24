@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="../modal.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
+  <script defer src="./modal.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <!--modal start-->
+  <div class="addStudentModal" style="display: none;">
+    <div class="studentCard">
+      <div class="closeModal"></div>
+      <form class="inputForm">
+        <div class="imageInput">
+          <div class="studentImage"></div>
+          <label for="file">
+            <div class="uploadInput">Click to Upload</div>
+            <input type="file" id="file" class="uploadInputArea" style="display: none;">
+          </label>        
+        </div>
+        <div class="studentInput">
+          <div class="nameInputContainer" style="display: flex;">
+            <p>name: </p>
+            <input type="text" class="nameInput">
+          </div>
+          <p>The name can be up to 13 characters, including spaces.</p>
+          <button class="addStudentButton" type="button">add Student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--modal end-->
+  <img src="../../../../image/GriffindorBackground.gif" class="background">
+  <div class="backgroundShadow"></div>
+  <div class="container">
+    <header>
+      <button class="createButton">enroll a Student</button>
+      <input type="text" placeholder="search Here" class="searchBar">
+    </header>
+  <main class="main"></main>
+  </div>
+</body>
+<script type="module" src="../src/core/firebase.js"></script>
+<script type="module" src="../studentProfile.js"></script>
+<script type="module" src="../uploadData.js"></script>
+</html>

@@ -1,4 +1,4 @@
-import {db, getDocs, collection, deleteDoc} from './src/core/firebase.js';
+import {db, getDocs, collection, deleteDoc} from '../../core/firebase.js';
 
 const main = document.getElementsByClassName("main")[0];
 
@@ -9,7 +9,8 @@ const createDiv = async () => {
     const profileHTML = `
     <div class="profileContainer">
       <div class="deleteButton">X</div>
-      <div class="profile" id="${student.id}" onclick="openUpdateModal()" style="background-image: url('${student.data().imageURL}')">
+      <div class="profile" id="${student.id}" 
+      onclick="openUpdateModal()" style="background-image: url('${student.data().imageURL}')">
         <img class="profileFrame">
         <p class="name">${student.data().name}</p>
         <img class="underBarImg">

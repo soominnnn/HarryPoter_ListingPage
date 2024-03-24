@@ -1,4 +1,4 @@
-import {db, doc, collection, storage, ref, getDownloadURL, uploadBytes} from './src/core/firebase.js';
+import {db, doc, collection, storage, ref, getDownloadURL, uploadBytes} from '../../core/firebase.js';
 
 let imageURL = '';
 

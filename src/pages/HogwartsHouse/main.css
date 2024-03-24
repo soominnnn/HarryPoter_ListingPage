@@ -127,7 +127,7 @@ header .searchBar {
   width: 218px; 
   height: 330px;
 
-  background-image: url('./image/HarryPotter.jpg'); 
+  background-image: url('../../../image/HarryPotter.jpg'); 
   background-size: cover; 
   background-repeat: no-repeat;
 
@@ -143,7 +143,7 @@ header .searchBar {
 
   margin-top: -2px;
 
-  content: url('./image/profileFrame.png');
+  content: url('../../../image/profileFrame.png');
   z-index: 4;
 }
 
@@ -170,6 +170,6 @@ header .searchBar {
   position: relative;
   width: 205px;
   height: 55px;
-  content: url('./image/NameUnderBar.png');
+  content: url('../../../image/NameUnderBar.png');
   z-index: 3;
 }
