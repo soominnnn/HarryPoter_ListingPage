@@ -1,5 +1,6 @@
 const modal = document.querySelector('.addStudentModal');
 const closeModalButton = document.querySelector('.closeModal');
+const createButton = document.querySelector('.createButton');
 
 const openModal = () => {
   modal.style.display = 'flex';
@@ -16,3 +17,5 @@ const closeModal = () => {
 }
 
 closeModalButton.addEventListener("click", closeModal);
+createButton.addEventListener("click", openModal);
+

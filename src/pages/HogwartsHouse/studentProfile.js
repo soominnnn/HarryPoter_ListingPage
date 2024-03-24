@@ -1,4 +1,4 @@
-import {db, getDocs, collection, deleteDoc} from '../../core/firebase.js';
+import {db, doc, getDocs, collection, deleteDoc} from '../../core/firebase.js';
 
 const main = document.getElementsByClassName("main")[0];
 
