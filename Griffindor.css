@@ -1,0 +1,91 @@
+// position, display, width/height, padding/margin, font, bg, etc
+.root{
+  backgroundIndex: -2
+  backgroundShadowIndex: -1
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.background {
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+
+  background-position: 100px 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  z-index: var(--backgroundIndex);
+}
+
+.backgroundShadow {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+
+  opacity: 0.7;
+
+  z-index: var(--backgroundShadowIndex);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.container header {
+  margin-top: 40px;
+}
+
+header .logo {
+  width: 440px;
+  height: 110px;
+}
+
+header .createButton {
+  width: 200px;
+  height: 40px;
+
+  font-size: 1.5rem;
+  color: #F9E2A5;
+
+  background-color: transparent;
+
+  border-bottom: 2px solid #F9E2A5;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+header .searchBar {
+  width: 200px;
+  height: 38px;
+  margin-left: 40px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.container main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+
+  max-width: 1220px;
+
+  margin: 0 auto;
+}

@@ -4,39 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="./Griffindor.js"></script>
+  <link rel="stylesheet" href="./Griffindor.css">
+  <link rel="stylesheet" href="./modal.css">
   <title>Document</title>
 </head>
 <body>
-  <div class="addStudentModal"></div>
-  <div class="studentCard">
-    <input type="file" class="uploadInput">
+  <!--modal start-->
+  <div class="addStudentModal" style="display: none;">
+    <div class="studentCard">
+      <div class="closeModal"></div>
+      <form class="inputForm">
+        <div class="imageInput">
+          <div class="studentImage"></div>
+          <label for="file">
+            <div class="uploadInput">Click to Upload</div>
+            <input type="file" id="file" class="uploadInputArea" style="display: none;">
+          </label>        
+        </div>
+        <div class="studentInput">
+          <div class="nameInputContainer" style="display: flex;">
+            <p>name: </p>
+            <input type="text" class="nameInput">
+          </div>
+          <p>The name can be up to 13 characters, including spaces.</p>
+          <button class="addStudentButton" type="button">add Student</button>
+        </div>
+      </form>
+    </div>
   </div>
+  <!--modal end-->
   <img src="./image/GriffindorBackground.gif" class="background">
   <div class="backgroundShadow"></div>
   <div class="container">
-    <!--<header>
-      <div class="searchBar"></div>
-      <img src="./image/GriffindorFont.png" alt="">
-      <button class="createButton">add New Student</button>
-    </header>-->
-  
-  <main>
-    <div class="profileContainer">
-      <div class="profile">
-        <img class="profileFrame">
-        <p class="name">Luna LoveGood</p>
-        <img class="underBarImg">
-      </div>
-    </div>
-  </main>
+    <header>
+      <button class="createButton">enroll a Student</button>
+      <input type="text" placeholder="search Here" class="searchBar">
+    </header>
+  <main class="main"></main>
   </div>
 </body>
 <script type="module" src="./src/core/firebase.js"></script>
 </html>
 
 <style>
+  .deleteButton {
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    z-index: 4;
+    margin: 0;
+    opacity: 0;
+  }
+  .profileContainer:hover .deleteButton {
+  opacity: 1;
+}
   .container {
-    justify-content: center;
+    flex-direction: column;
     overflow-y: auto;
     display: flex;
     width: 100%;
@@ -48,10 +72,10 @@
 
   }
   .studentCard {
-    position: absolute;
+    width: 649px;
+    height: 458px;
+    border-radius: 20px;
     background-image: url('./image/StudentCard.png');
-    width: 100%;
-    height: 100%;
     background-size: 600px;
     background-repeat: no-repeat;
     background-position: center;
@@ -60,10 +84,12 @@
   .addStudentModal {
     width: 100%;
     position: absolute;
-    z-index: 5;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    background-color: black;
-    opacity: 0.8
+    background-color: rgba(0, 0, 0, 0.747);
   }
   .profileContainer {
     position: relative; 
@@ -78,11 +104,12 @@
     flex-direction: column;
     align-items: center;
     background-image: url('./image/HarryPotter.jpg'); background-size: cover; background-repeat: no-repeat;
-    width: 218px; height: 334px; border-radius: 28px;  z-index: 3;
+    width: 218px; height: 330px; border-radius: 28px;  z-index: 3;
     justify-content:flex-start;
   }
   .profileFrame {
     z-index:4; 
+    margin-top: -2px;
     width: 218px; 
     height: 334px; 
     position:relative; 
@@ -98,6 +125,14 @@
     z-index: 3;
     padding: 0;
     text-align: center;
+    font-family: 'Nanum Myeongjo',serif;
+    width: 215px;
+    margin: 0;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    text-shadow: 0px 2px 5px white;
+    font-size: 2rem;
   }
   .underBarImg {
     position: relative;
@@ -149,8 +184,8 @@
     justify-content: center;
   }
   .searchBar {
-    width: 345px;
-    height: 50px;
+    width: 200px;
+    height: 38px;
     border-radius: 25px;
     background-color: white;
   }
@@ -168,23 +203,94 @@
   main {
     display: flex;
     justify-content: space-around;
-    width: 1220px;
+    max-width: 1220px;
     flex-wrap: wrap;
     gap: 30px;
     margin: 0 auto;
 
   }
-  p{
-    font-family: 'Nanum Myeongjo',serif;
-    width: 215px;
-    margin: 0;
-    padding: 10px;
-    color: white;
-    font-weight: 500;
-    text-shadow: 0px 2px 5px white;
-    font-size: 2rem;
+</style>
+
+<style>
+  .inputForm {
+    width: 656px;
+    height: 427px;
+    display: flex;
+    justify-content: flex-end;
   }
-  img {
-    background-color: transparent;
+  .closeModal {
+    position: absolute;
+    width: 58px;
+    height: 53px;
+    margin-left: 35px;
+    margin-top: 20px;
+  }
+  .imageInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 30px;
+  }
+  .studentImage {
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+  }
+  .uploadInputArea {
+    display: none;
+  }
+  .studentInput {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+  }
+  .uploadInput {
+    width: 194px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 20px;
+    font-weight: bold;
   }
 </style>
+
+<style>
+  header {
+    margin-top: 40px;
+  }
+
+  header .logo {
+    width: 440px;
+    height: 110px;
+  }
+
+  header .createButton {
+    font-size: 1.5rem;
+    width: 200px;
+    height: 40px;
+  }
+</style>
+
+<script>
+
+    document.querySelector('.closeModal').addEventListener('click', function() {
+        document.getElementsByClassName('addStudentModal')[0].style.display = 'none';
+    });
+
+
+    // document.querySelector('.main').addEventListener('click', function(event) {
+    //     if (event.target.classList.contains(event.target.className)) {
+    //       if (event.currentTarget.className === 'main') {
+    //       document.querySelector('.addStudentModal').style.display = 'flex';
+    //       }
+    //     }
+    // });
+
+</script>
